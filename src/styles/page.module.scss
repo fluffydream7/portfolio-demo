@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+
+.main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/nightsky.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 10rem;
+    font-family: 'Nabla', cursive;
+    animation: mash 2s 1 6s;
+    white-space: nowrap;
+
+    span {
+        display: inline-block;
+        animation-name: dropLetter;
+        animation-duration: 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: both;
+        animation-timing-function: ease-out;
+        @for $i from 1 through 7 {
+            &:nth-child(#{$i}) {
+                animation-delay: (random() * 2.5s) + 1s;
+            }
+          }
+    }
+}
+
+.dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: black;
+    animation: expand-dot 2s 1 ease-in 6.5s both;
+}
+
+.content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    height: 100%;
+    animation: show-content 1s 1 ease-in 7.5s both;
+}
+
+@keyframes dropLetter {
+    0% {
+        transform: translateY(calc(-50vh - 50%));
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes mash {
+    from {
+        letter-spacing: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    to {
+        letter-spacing: -10rem;
+        transform: translate(-50%, -50%) scale(0.5);
+    }
+}
+
+@keyframes expand-dot {
+    0% {
+        width: 0;
+        height: 0;
+        background-color: #ffe956;
+    }
+    25% {
+        background-color: #fff;
+    }
+    50% {
+        background-color: #ff7900;
+    }
+    75% {
+        background-color: #822B00;
+    }
+    100% {
+        width: 150vmax;
+        height: 150vmax;
+        background-color: black;
+    }
+}
+
+@keyframes show-content {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
