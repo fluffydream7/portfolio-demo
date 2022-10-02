@@ -12,7 +12,7 @@ const AboutMe = () => {
         <section>
             <div className={styles.container}>
                 <StaticImage
-                    src={'../images/profile.png'}
+                    src='../images/profile.png'
                     width={250}
                     height={250}
                     alt="profile image"
