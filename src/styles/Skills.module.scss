@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.hidden {
+    .tubeBox {
+        opacity: 0;
+        transform: translateY(50%);
+    }
+    .percentage {
+        height: 0 !important;
+    }
+}
+
+.tubeBox {
+    transition: all 0.5s;
+    @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+            transition-delay: 0.2s * ($i - 1);
+
+            .percentage {
+                transition-delay: 0.2s * ($i - 1);
+            }
+        }
+}}
+
+.tube {
+    display: flex;
+    flex-flow: column;
+    justify-content: end;
+    width: 64px;
+    height: 240px;
+    border: 2px solid var(--primary-color);
+    border-radius: 32px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.label {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.percentage {
+    width: 100%;
+    background-color: var(--primary-color);
+    text-align: center;
+    color: var(--bg-color);
+    transition: all 2s;
+}

@@ -1,32 +1,57 @@
 import * as React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  faFacebook,
+  faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
+import {
+  faEnvelope,
+} from '@fortawesome/free-solid-svg-icons';
 import NavigationButton from "../components/NavigationButton";
 import * as styles from "../styles/page.module.scss";
 import "../styles/index.css";
-import AboutMeModal from "../components/AboutMeModal";
+import AboutMe from "../components/AboutMe";
+import Skills from "../components/Skills";
+import Projects from "../components/Projects";
+import Contact from "../components/Contact";
 
 const IndexPage = () => {
-  const [modalOpen, setModalOpen] = React.useState(false);
-
   return (
     <>
-      <main className={styles.main}>
+      <div className={styles.intro}>
         <div className={styles.title}>
-          <span>K</span>
-          <span>I</span>
-          <span>M</span>
-          <span>S</span>
-          <span>E</span>
-          <span>U</span>
-          <span>L</span>
+          <span>P</span>
+          <span>o</span>
+          <span>r</span>
+          <span>t</span>
+          <span>f</span>
+          <span>o</span>
+          <span>l</span>
+          <span>i</span>
+          <span>o</span>
         </div>
         <div className={styles.dot}></div>
-        <section className={styles.content}>
-          <NavigationButton description="Dunkin Donuts"/>
-          <NavigationButton description="Mobile Site"/>
-          <NavigationButton description="About ME" onClick={() => {setModalOpen(true)}}/>
-        </section>
+      </div>
+      <header className={styles.header}>
+        <div>seulkim</div>
+        <div className={styles.icons}>
+          <FontAwesomeIcon icon={faFacebook}  size="xl"/>
+          <FontAwesomeIcon icon={faTwitter}  size="xl"/>
+          <FontAwesomeIcon icon={faEnvelope}  size="xl"/>
+        </div>
+      </header>
+      <aside className={styles.sideMenu}>
+        <NavigationButton description="About Me"/>
+        <NavigationButton description="Skills"/>
+        <NavigationButton description="Portfolio"/>
+        <NavigationButton description="Contact"/>
+      </aside>
+      <main className={styles.main}>
+        <AboutMe />
+        <Skills />
+        <Projects />
+        <Contact />
       </main>
-      <AboutMeModal open={modalOpen} onClose={() => {setModalOpen(false)}}/>
     </>
   );
 };

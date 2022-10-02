@@ -1,0 +1,56 @@
+.container {
+    display: flex;
+    align-items: end;
+    width: 100%;
+    padding: 30px;
+    background-color: var(--primary-color);
+}
+
+.device {
+    position: relative;
+    margin-right: -30px;
+    z-index: 1;
+
+    &:hover .screen {
+        background-position-y: bottom;
+    }
+}
+
+.frame {
+    z-index: 10;
+}
+
+.screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 10px;
+    background-color: #000;
+    background-size: cover;
+    transition: all 0.5s;
+}
+
+.imac {
+    .screen {
+        bottom: 30%;
+        background-image: url(../images/pcweb.png);
+    }
+}
+
+.ipad {
+    .screen {
+        inset: 2px 3px 10px 3px;
+        border-radius: 20px;
+        background-image: url(../images/tweb.png);
+    }
+}
+
+.iphone {
+    .screen {
+        inset: 1px 3px 5px 3px;
+        border-radius: 20px;
+        background-image: url(../images/mweb.png);
+    }
+}

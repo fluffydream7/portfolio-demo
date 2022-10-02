@@ -1,14 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Nabla&display=swap');
+:root {
+    --primary-color-values: 255, 215, 127;
+    --primary-color: rgb(var(--primary-color-values));
+    --primary-hover-color: #fffb88;
+    --bg-color: #000;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    font-family: 'Rubik', Arial, Helvetica, sans-serif;
+}
+
+.intro {
+    position: fixed;
+    inset: 0;
+    background-color: var(--primary-color);
+    z-index: 100;
+    animation: hide-intro 2s 1 8s ease-in forwards;
+    display: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 40px 50px;
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+
+    & > *{
+        transition: all 0.5s;
+
+        &:hover{
+            color: var(--primary-hover-color);
+            transform: scale(1.2);
+        }
+    }
+}
+
+.sideMenu {
+    position: fixed;
+    bottom: 100px;
+    left: 0;
+}
 
 .main {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-image: url(../images/nightsky.jpeg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    justify-content: center;
+    display: flex;
+    flex-flow: column;
     align-items: center;
+
+    section {
+        display: flex;
+        align-items: center;
+        max-width: 700px;
+        width: 100%;
+        height: 100vh;
+    }
 }
 
 .title {
@@ -16,8 +71,9 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: var(--bg-color);
     font-size: 10rem;
-    font-family: 'Nabla', cursive;
+    font-family: 'Caveat', cursive;
     animation: mash 2s 1 6s;
     white-space: nowrap;
 
@@ -28,7 +84,7 @@
         animation-iteration-count: 1;
         animation-fill-mode: both;
         animation-timing-function: ease-out;
-        @for $i from 1 through 7 {
+        @for $i from 1 through 9 {
             &:nth-child(#{$i}) {
                 animation-delay: (random() * 2.5s) + 1s;
             }
@@ -42,18 +98,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-color: black;
+    background-color: var(--bg-color);
     animation: expand-dot 2s 1 ease-in 6.5s both;
-}
-
-.content {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 30px;
-    height: 100%;
-    animation: show-content 1s 1 ease-in 7.5s both;
 }
 
 @keyframes dropLetter {
@@ -72,7 +118,7 @@
     }
     to {
         letter-spacing: -10rem;
-        transform: translate(-50%, -50%) scale(0.5);
+        transform: translate(-50%, -50%) scale(0);
     }
 }
 
@@ -80,29 +126,19 @@
     0% {
         width: 0;
         height: 0;
-        background-color: #ffe956;
-    }
-    25% {
-        background-color: #fff;
-    }
-    50% {
-        background-color: #ff7900;
-    }
-    75% {
-        background-color: #822B00;
     }
     100% {
         width: 150vmax;
         height: 150vmax;
-        background-color: black;
     }
 }
 
-@keyframes show-content {
+@keyframes hide-intro {
     from {
-        opacity: 0;
+        opacity: 1;
     }
     to {
-        opacity: 1;
+        opacity: 0;
+        pointer-events: none;
     }
 }
