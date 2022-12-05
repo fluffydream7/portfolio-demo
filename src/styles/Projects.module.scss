@@ -1,14 +1,89 @@
+.projects {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 900px;
+    width: 100%;
+    height: 100vh;
+    gap: 30px;
+    flex: none;
+    scroll-snap-align: start;
+}
+
+.circle {
+    position: absolute;
+    top: 35%;
+    left: -150px;
+    width: 350px;
+    height: 350px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.circle2 {
+    position: absolute;
+    top: 18%;
+    left: -150px;
+    width: 200px;
+    height: 200px;
+    background-color: var(--primary-hover-color);
+    border-radius: 50%;
+}
+
+.circle3 {
+    position: absolute;
+    bottom: 15%;
+    left: -50px;
+    width: 100px;
+    height: 100px;
+    background-color: var(--primary-hover-color);
+    border-radius: 50%;
+}
+
+.circle4 {
+    position: absolute;
+    bottom: 15%;
+    left: 100px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-hover-color);
+    border-radius: 50%;
+}
+
+.circle5 {
+    position: absolute;
+    bottom: 15%;
+    left: 200px;
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
+.circle6 {
+    position: absolute;
+    top: 40%;
+    left: 200px;
+    width: 250px;
+    height: 250px;
+    background-color: var(--primary-hover-color);
+    border-radius: 50%;
+}
+
+.slideContainer {
+    width: 100%;
+}
+
 .container {
     display: flex;
     align-items: end;
     width: 100%;
-    padding: 30px;
-    background-color: var(--primary-color);
 }
 
 .device {
     position: relative;
-    margin-right: -30px;
+    margin-right: -20px;
+    cursor: pointer;
     z-index: 1;
 
     &:hover .screen {
@@ -35,22 +110,60 @@
 .imac {
     .screen {
         bottom: 30%;
-        background-image: url(../images/pcweb.png);
     }
 }
 
 .ipad {
     .screen {
-        inset: 2px 3px 10px 3px;
+        inset: 2px 4px 10px 4px;
         border-radius: 20px;
-        background-image: url(../images/tweb.png);
     }
 }
 
 .iphone {
     .screen {
-        inset: 1px 3px 5px 3px;
+        inset: 2px 3px 10px 3px;
         border-radius: 20px;
-        background-image: url(../images/mweb.png);
     }
+}
+
+.dunkinPc {
+    background-image: url(../images/pcweb.png);
+}
+
+.dunkinTablet {
+    background-image: url(../images/tweb.png);
+}
+
+.dunkinMobile {
+    background-image: url(../images/mweb.png);
+}
+
+.recipePc {
+    background-image: url(../images/pcweb2.png);
+}
+
+.recipeTablet {
+    background-image: url(../images/tweb2.png);
+}
+
+.recipeMobile {
+    background-image: url(../images/mweb2.png);
+}
+
+.projectSlide {
+    margin-left: 40px;
+}
+
+.projectTitle {
+    font-size: 4rem;
+    color: var(--primary-hover-color);
+    font-weight: bold;
+    line-height: 3rem;
+    margin-bottom: 0;
+}
+
+.aboutProject {
+    font-family: 'Rubik';
+    font-size: 1.3rem
 }

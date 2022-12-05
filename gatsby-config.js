@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/portfolio-demo",
+  pathPrefix: "/portfolio-react",
   siteMetadata: {
     title: `Portfolio`,
     siteUrl: `https://www.yourdomain.tld`
@@ -34,6 +34,14 @@ module.exports = {
           {
             name: `Caveat`, 
             file: `https://fonts.googleapis.com/css2?family=Caveat&display=swap`,
+          },
+          {
+            name: `Dancing Script`, 
+            file: `https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap`,
+          },
+          {
+            name: `Gaegu`, 
+            file: 'https://fonts.googleapis.com/css2?family=Gaegu:wght@300;400;700&display=swap',
           },
         ],
       },

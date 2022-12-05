@@ -3,7 +3,7 @@ import * as styles from "../styles/Contact.module.scss"
 
 const Contact = () => {
     return (
-        <section>
+        <section id="contact" className={styles.contact}>
             <div className={styles.container}>
                 <h2>Contact Me</h2>
                 <div className={styles.form}>
@@ -17,7 +17,7 @@ const Contact = () => {
                         <div>Message</div>
                         <textarea id="message"/>
                     </div>
-                    <button>보내기</button>
+                    <button className={styles.send}>보내기</button>
                 </div>
             </div>
         </section>

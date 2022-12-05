@@ -1,12 +1,15 @@
 import * as React from "react";
 import SkillTube from "./SkillTube";
 import * as styles from "../styles/Skills.module.scss";
+import useOnScreen from "../utills/useOnScreen";
 
 const Skills = () => {
-    const [hidden,setHidden] = React.useState(false)
+    const ref = React.useRef();
+    const onScreen = useOnScreen(ref, '-100px');
+    
     return (
-        <section>
-           <div className={`${styles.container} ${hidden && styles.hidden}`}>
+        <section id="skills" className={styles.skills} ref={ref}>
+           <div className={`${styles.container} ${!onScreen && styles.hidden}`}>
             <SkillTube name='Photoshop' score={0.75}/>
             <SkillTube name='Illustrator' score={0.5}/>
             <SkillTube name='HTML' score={0.85}/>

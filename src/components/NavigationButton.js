@@ -3,8 +3,10 @@ import * as styles from "../styles/NavigationButton.module.scss";
 
 const NavigationButton = (props) => {
     return (
-        <div className={styles.button} onClick={props.onClick}>
-            <div></div>
+        <div className={styles.button} onClick={() => {
+            const target = document.getElementById(props.target);
+            target.scrollIntoView({ behavior: 'smooth' });
+        }}>
             <div className={styles.description}>{props.description}</div>
         </div>
     );

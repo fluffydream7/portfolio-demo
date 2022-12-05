@@ -1,17 +1,14 @@
 .button {
-    display: flex;
-    align-items: center;
-    gap: 50px;
     font-size: 1.5rem;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Pacifico', cursive;
     line-height: 1;
     cursor: pointer;
 }
 
 .description{
-    transition: all 0.3s;
+    transition: all 0.5s;
     &:hover {
-        font-family: 'Pacifico', cursive;
-        color: var(--primary-hover-color);
+        font-size: 1.8rem;
+        color: var(--primary-color);
     }
 }

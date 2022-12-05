@@ -1,7 +1,7 @@
 :root {
     --primary-color-values: 255, 215, 127;
     --primary-color: rgb(var(--primary-color-values));
-    --primary-hover-color: #fffb88;
+    --primary-hover-color: #fec30d;
     --bg-color: #000;
 }
 
@@ -15,10 +15,9 @@ body {
 .intro {
     position: fixed;
     inset: 0;
-    background-color: var(--primary-color);
+    background-color: var(--primary-hover-color);
     z-index: 100;
     animation: hide-intro 2s 1 8s ease-in forwards;
-    display: none;
 }
 
 .header {
@@ -28,42 +27,62 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    padding: 40px 50px;
+    padding: 40px 100px;
+    background-color: var(--primary-hover-color);
+    color: #000;
+    border-bottom: 2px solid var(--primary-hover-colorcolor);
+    z-index: 1;
+
+    &.scrolled {
+        background-color: #000;
+        color: var(--primary-hover-color);
+    }
 }
 
 .icons {
     display: flex;
-    gap: 20px;
+    gap: 25px;
     cursor: pointer;
 
     & > *{
         transition: all 0.5s;
 
         &:hover{
-            color: var(--primary-hover-color);
-            transform: scale(1.2);
+            color: var(--primary-color);
+            transform: scale(1.5);
         }
     }
 }
 
-.sideMenu {
+.links {
+    display: flex;
+    gap: 30px;
     position: fixed;
-    bottom: 100px;
-    left: 0;
+    top: 0;
+    right: 100px;
+    padding: 40px;
 }
 
 .main {
     display: flex;
     flex-flow: column;
     align-items: center;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+}
+.arrows {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: var(--primary-hover-color);
+    animation: arrowDown 1s ease-in infinite;
+}
 
-    section {
-        display: flex;
-        align-items: center;
-        max-width: 700px;
-        width: 100%;
-        height: 100vh;
-    }
+.arrow {
+    font-size: 3rem;
 }
 
 .title {
@@ -73,7 +92,8 @@ body {
     transform: translate(-50%, -50%);
     color: var(--bg-color);
     font-size: 10rem;
-    font-family: 'Caveat', cursive;
+    font-family: 'Pacifico', Arial, Helvetica, sans-serif;
+    font-weight: bold;
     animation: mash 2s 1 6s;
     white-space: nowrap;
 
@@ -100,6 +120,17 @@ body {
     border-radius: 50%;
     background-color: var(--bg-color);
     animation: expand-dot 2s 1 ease-in 6.5s both;
+}
+
+@keyframes arrowDown {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -50%, 0)
+    }
+    100% {
+        opacity: 1;
+        transform: translateZ(0);
+    }
 }
 
 @keyframes dropLetter {
